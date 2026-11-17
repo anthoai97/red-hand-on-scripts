@@ -10,9 +10,9 @@ ss -lntp
 ps -ef --forest
 ```
 
-### SQLMAP
+## SQLMAP
 --level (Scope of Testing: 1 to 5)
-
+---
 The --level flag dictates which entry points (injection points) sqlmap will test and how many payloads it throws at them. The default is 1.
 Level	Injection Points & Payloads Tested
 1 (Default)	Tests standard GET and POST parameters only.
