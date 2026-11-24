@@ -30,3 +30,18 @@ Risk	Payload Behavior & Potential Impact
 1 (Default)	Uses standard, non-intrusive queries designed to cause zero damage or disruption.
 2	Adds heavy time-based blind payloads (e.g., SLEEP or WAITFOR). Can slow down or temporarily freeze a busy database.
 3	Adds OR-based SQL injection payloads. Warning: If injected into an UPDATE or DELETE query (like a password reset or profile edit form), OR 1=1 can overwrite or wipe out the entire database table.
+
+## PTY
+```
+Step 1 — Spawn a PTY:
+python3 -c 'import pty; pty.spawn("/bin/bash")'
+
+Step 2 — Press Ctrl+Z to background the shell.
+
+Step 3 — In your local terminal:
+stty raw -echo; fg
+
+Step 4 — Back in the reverse shell:
+export TERM=xterm
+export SHELL=/bin/bash
+```
