@@ -1,5 +1,11 @@
 # Scripts
 
+## 0 Geting start
+``
+curl -sL https://raw.githubusercontent.com/anthoai97/red-hand-on-scripts/main/tmux-setup.sh | bash
+``
+
+## Daily
 ```sh
 #/bin/sh
 nmap -Sc -sV -reason -oA nmap/makesense <>
