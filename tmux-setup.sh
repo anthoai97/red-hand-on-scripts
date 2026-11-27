@@ -2,7 +2,7 @@
 # Quick tmux setup for HTB Pwnbox: mouse scroll, drag-select -> clipboard, big scrollback.
 # Usage: curl -sL https://raw.githubusercontent.com/anthoai97/red-hand-on-scripts/main/tmux-setup.sh | bash
 
-SCRIPT_VERSION=2
+SCRIPT_VERSION=3
 CONF="$HOME/.tmux.conf"
 
 echo "[*] tmux-setup v$SCRIPT_VERSION"
@@ -47,6 +47,11 @@ cat > "$CONF" <<'EOF'
 set -g mouse on
 set -g history-limit 50000
 
+# --- Panes: prefix+v side-by-side, prefix+- top/bottom, prefix+x close (no confirm) ---
+bind v split-window -h -c "#{pane_current_path}"
+bind - split-window -v -c "#{pane_current_path}"
+bind x kill-pane
+
 # --- vi keys in copy mode ---
 setw -g mode-keys vi
 bind -T copy-mode-vi v send -X begin-selection
@@ -84,4 +89,5 @@ echo "    tmux $TMUX_VER | clipboard: ${CLIP%% *} | DISPLAY=${DISPLAY:-<unset>}"
 [ -z "$CLIP" ] && echo "[!] No clipboard tool: copies only go to the tmux buffer (paste with Ctrl-b ])"
 echo "    - Scroll: mouse wheel"
 echo "    - Copy:   drag to select (or double/triple-click), then paste with Ctrl+Shift+V"
+echo "    - Panes:  prefix+v split side-by-side, prefix+- split top/bottom, prefix+x close"
 echo "    - Shift+drag uses the terminal's own selection instead of tmux"
