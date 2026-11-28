@@ -1,7 +1,8 @@
 # Scripts
 
-## 0 Geting start
-``
+## 0 - Geting start PwnBox
+
+``sh
 curl -sL https://raw.githubusercontent.com/anthoai97/red-hand-on-scripts/main/tmux-setup.sh | bash
 ``
 
