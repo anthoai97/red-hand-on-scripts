@@ -2,9 +2,9 @@
 
 ## 0 - Geting start PwnBox
 
-``sh
+```sh
 curl -sL https://raw.githubusercontent.com/anthoai97/red-hand-on-scripts/main/tmux-setup.sh | bash
-``
+```
 
 ## Daily
 ```sh
